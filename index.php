@@ -11,11 +11,11 @@ class MasterController {
     }
 
     static function execute($request) {
-        if (!static::isValidRequest($request)) {
+        static::init();        
+        
+        if (!static::isValidRequest($request)) {            
             App::abort(0);
-        }
-
-        static::init();
+        }        
 
         $controller = ucfirst($request['controller']) . ucfirst(static::$controllerSuffix);
         $action = isset($request['action']) ? $request['action'] : static::$defaultMethod;
@@ -32,13 +32,12 @@ class MasterController {
         $ctr->{$method}(static::getParams($request));
     }
 
-    static function isValidRequest($request) {
-        return isset($request['controller']) && isset($request['action']);
-    }
+    static function isValidRequest($request) {        
+        return isset($request['controller']) ;
+    }   
     
     
-    
-    static function getParams($request){
+    static function getParams($request){           
         unset($request['controller']);
         unset($request['action']);
         return $request;

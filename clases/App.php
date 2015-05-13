@@ -12,6 +12,8 @@ class App{
                 echo 'Not found';
                 break;
         }
+        
+        exit;
     }
 
 }
