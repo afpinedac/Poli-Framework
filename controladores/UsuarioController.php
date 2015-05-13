@@ -1,34 +1,36 @@
 <?php
 
 class UsuarioController extends MasterController {
-  
-  
-  public function getRegistrar(){
-      echo "estoy registrando :)x|S";
-    
-  }
-  
-  
-   public function postRegistrar(){
-      echo "estoy registrando";
-    
-  }
-  
-   public function getEliminar(){
-      echo "estoy eliminando";
-    
-  }
-  
-  public function getIndex(){
-      echo "voy al index<br>";
-    
-  }
-  
-   
-  
-  
-}
 
+    public function getRegistrar() {
+        //implementation of Decorator pattern desing
+        $data['users'] = UsuarioModel::all();
+        var_dump($data);
+        View::load('usuario/registrar', $data);
+    }
+
+    public function postRegistrar($request) {
+        
+       $user = [
+           'cedula' => $request['cedula'],
+           'nombre' => $request['nombre'],
+           'edad' => $request['edad']           
+       ];
+       
+       UsuarioModel::save($user);
+        
+        
+    }
+
+    public function getEliminar() {
+        echo "Estoy eliminando";
+    }
+
+    public function getIndex() {
+        echo "voy al index<br>";
+    }
+
+}
 
 /*
 require './modelo/conexion.php';

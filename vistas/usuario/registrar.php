@@ -1,17 +1,28 @@
 <h2>Registrar usuarios</h2>
 
-<form action='usuario.php?action=registrar' method='post'>
+<form action='index.php?controller=usuario&action=registrar' method='post'>
 Departamento: 
-  <select name='departamento'>
-    <?php  while($departamento = mysql_fetch_assoc($departamentos)){?>
-    <option value='<?php echo $departamento['id']?>'><?php echo $departamento['nombre']?></option>
-    <?php  }?>
-    
-    </select>
+
   
   <br>
  Nombre: <input name='nombre' type='text'><br>
  Cedula <input name='cedula' type='text'><br>
  Edad: <input name='edad' type='number'>
+ <input type="submit" >
   
 </form>
+
+<hr>
+
+<table border="1">
+<?php  while($user = mysqli_fetch_assoc($users)){ ?>
+        
+       <tr>
+           <td><?php echo $user['cedula'] ?></td>
+           <td><?php echo $user['nombre'] ?></td>
+           <td><?php echo $user['edad'] ?></td>
+       </tr>
+
+<?php } ?>
+
+</table>

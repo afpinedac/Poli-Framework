@@ -1,9 +1,0 @@
-<?php
-
-Class Requirer{
-    
-    
-    
-    
-    
-}
