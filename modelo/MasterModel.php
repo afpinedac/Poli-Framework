@@ -11,7 +11,7 @@ class MasterModel {
 
     public static function query($sql) {
         static::connect();
-        $result = mysqli_query(static::$link, static::sanitize($sql));
+        $result = mysqli_query(static::$link, $sql) or die('Error executing : ' . $sql . " err:" . mysqli_errno(static::$link));
         static::close();
         return $result;
     }
@@ -29,11 +29,7 @@ class MasterModel {
     public static function all() {        
         return static::query("SELECT * FROM " . static::$table);
     }
-    
-    public static function save(){
-        
-        
-    }
+ 
     
     public static function deleteById($id){        
         return static::query("DELETE FROM "  . static::$table . " WHERE id = $id");
