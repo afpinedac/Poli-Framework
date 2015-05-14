@@ -13,12 +13,13 @@ define("BASE_MODELS",'/modelo');
 define("BASE_CONTROLLERS",'/controladores');
 define("BASE_VIEWS",'/vistas');
 define("BASE_CLASSES",'/clases');
-
+define("BASE_CONFIG",'/config');
 
 
 //load the folders
 $folders = [BASE_CLASSES , BASE_MODELS, BASE_CONTROLLERS];
-foreach ($folders as $folder) {      
+foreach ($folders as $folder) {   
+    
     foreach (glob(".{$folder}/*.php") as $file) {
         require  $file;
     }    
