@@ -7,7 +7,7 @@ class MasterController {
 
     static function init() {
         //load the application's controllers/classes/models.       
-         Requirer::load('config/boot');
+         Requirer::load('app/config/boot');
     }
 
     static function execute($request) {
