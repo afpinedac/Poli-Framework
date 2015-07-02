@@ -1,0 +1,14 @@
+{
+  "require": {
+    "doctrine/orm": "2.4.*",
+    "symfony/yaml": "2.*"
+  },
+  "autoload": {
+    "classmap": [
+      "models/",
+      "app/classes/",
+      "controllers/",
+      "app/libraries/"
+    ]
+  }
+}
