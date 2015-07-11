@@ -1,6 +1,7 @@
 {
   "name": "afpinedac",
   "devDependencies": {
+    "browser-sync": "^2.7.13",
     "laravel-elixir": "^2.3.13"
   }
 }
