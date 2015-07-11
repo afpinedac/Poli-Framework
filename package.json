@@ -1,0 +1,6 @@
+{
+  "name": "afpinedac",
+  "devDependencies": {
+    "laravel-elixir": "^2.3.13"
+  }
+}

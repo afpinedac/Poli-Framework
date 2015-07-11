@@ -1,2 +1,4 @@
 /vendor
-/nbprojecttest
+/nbproject
+/node_modules
+

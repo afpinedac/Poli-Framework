@@ -1,5 +1,9 @@
 <?php
 
+
+
+
+/*
 class MasterModel {
 
     protected static $table;
@@ -36,3 +40,4 @@ class MasterModel {
     }
 
 }
+*/
