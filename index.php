@@ -2,6 +2,37 @@
 
 require './vendor/autoload.php';
 
+
+
+$router = new Phroute\Phroute\RouteCollector(new \Phroute\Phroute\RouteParser);
+
+
+
+$router->get('/test', function() {
+  echo 'pasa';
+});
+$router->get('/', function() {
+  echo 'indice';
+});
+
+$router->addRoute('GET', 'empresa/user/{id}?', function($id = null) {
+  echo 'second';
+});
+
+ $router->controller('product', 'ProductController');
+
+
+$dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
+
+$dispatcher->dispatch($_SERVER['REQUEST_METHOD'], parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+// Print out the value returned from the dispatched function
+//echo $response;
+
+
+
+/*
+
 class MasterController {
 
   private static $defaultMethod = 'index';
@@ -48,7 +79,7 @@ class MasterController {
 
 }
 
-MasterController::execute($_REQUEST);
+MasterController::execute($_REQUEST);*/
 
 
 
