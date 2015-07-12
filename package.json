@@ -2,6 +2,7 @@
   "name": "afpinedac",
   "devDependencies": {
     "browser-sync": "^2.7.13",
+    "gulp-connect-php": "0.0.5",
     "laravel-elixir": "^2.3.13"
   }
 }

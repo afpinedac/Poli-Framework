@@ -15,6 +15,7 @@ class ProductController  {
     DB::manager()->flush();
     //$entityManager->persist($product);
     //$entityManager->flush();
+    //hahah
 
     echo "product created {$product->getId()}";
   }

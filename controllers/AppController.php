@@ -1,5 +1,4 @@
 <?php
-
 class AppController {
 
   public function getIndex() {
@@ -12,6 +11,7 @@ class AppController {
     if (Auth::validate($params['user'], $params['pass'], $params['type'])) {
       Redirect::to($type . "/index/");
     } else {
+      //echo est
       Redirect::to("app/index");
     }
   }

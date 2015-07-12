@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends MasterController {
+class UserController {
 
   public function getRegistrar() {
     $data['users'] = UserModel::all();

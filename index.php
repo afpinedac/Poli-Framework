@@ -2,25 +2,26 @@
 
 require './vendor/autoload.php';
 
-
-
 $router = new Phroute\Phroute\RouteCollector(new \Phroute\Phroute\RouteParser);
 
 
 
-$router->get('/test', function() {
-  echo 'pasa';
+$router->get('/empresa/test', function() {
+         // View::load('usuario.test');
 });
 $router->get('/', function() {
-  echo 'indice';
+        View::load('usuario/test');
 });
 
+/*
 $router->addRoute('GET', 'empresa/user/{id}?', function($id = null) {
   echo 'second';
 });
 
- $router->controller('product', 'ProductController');
-
+/*
+$router->controller('product', 'ProductController');
+$router->controller('user', 'UserController');
+*/
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
